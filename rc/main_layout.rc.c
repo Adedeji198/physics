@@ -1,0 +1,48 @@
+	
+CreateWindowEx(0,
+	"edit", 
+	TEXT (""),
+	ES_LEFT|WS_BORDER|WS_TABSTOP|WS_CHILD|WS_VISIBLE|ES_AUTOHSCROLL|WS_CHILDWINDOW|WS_VISIBLE|WS_VSCROLL|WS_TABSTOP|ES_MULTILINE|WS_EX_CLIENTEDGE,
+	13,
+	0,
+	661,
+	351,
+	hWnd,
+	(HMENU)IDC_EDT_OUTPUT, // window menu handle
+	hInst, 
+	0
+);
+
+
+	
+CreateWindowEx(0,
+	"listBox", 
+	TEXT (""),
+	LBS_NOTIFY|WS_BORDER|WS_VSCROLL|WS_CHILD|WS_VISIBLE|WS_CHILDWINDOW|WS_VISIBLE|WS_TABSTOP|LBS_NOINTEGRALHEIGHT|LBS_HASSTRINGS|LBS_NOTIFY|WS_EX_CLIENTEDGE,
+	13,
+	361,
+	508,
+	194,
+	hWnd,
+	(HMENU)IDC_LST1, // window menu handle
+	hInst, 
+	0
+);
+
+
+	
+CreateWindowEx(0,
+	"button", 
+	TEXT ("View"),
+	WS_VISIBLE | WS_CHILD |WS_CHILDWINDOW|WS_VISIBLE|WS_TABSTOP,
+	558,
+	361,
+	90,
+	21,
+	hWnd,
+	(HMENU)IDC_BTN1, // window menu handle
+	hInst, 
+	0
+);
+
+

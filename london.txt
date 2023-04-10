@@ -1,0 +1,95 @@
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>rem @echo off 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>IF "all" == "main_controller.c" (
+set updated=0  
+ IF NOT EXIST all (
+set updated=1  
+ echo all missing  
+ goto :eof 
+)  
+ IF "" GTR "" (
+echo main_controller.c was updated  
+ set updated=1  
+ goto :eof 
+)  
+ goto :eof 
+) 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>IF "all" == "resource.rc" (
+set updated=0  
+ IF NOT EXIST all (
+set updated=1  
+ echo all missing  
+ goto :eof 
+)  
+ IF "" GTR "" (
+echo resource.rc was updated  
+ set updated=1  
+ goto :eof 
+)  
+ goto :eof 
+) 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>IF "all" == "main.c" (
+set updated=0  
+ IF NOT EXIST all (
+set updated=1  
+ echo all missing  
+ goto :eof 
+)  
+ IF "" GTR "" (
+echo main.c was updated  
+ set updated=1  
+ goto :eof 
+)  
+ goto :eof 
+) 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>IF "all" == "random.c" (
+set updated=0  
+ IF NOT EXIST all (
+set updated=1  
+ echo all missing  
+ goto :eof 
+)  
+ IF "" GTR "" (
+echo random.c was updated  
+ set updated=1  
+ goto :eof 
+)  
+ goto :eof 
+) 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>IF "all" == "main_controller.o" (
+echo processing main_controller.o  
+ IF NOT EXIST all (
+echo tcc -o all       -lcomdlg32  -m32 -b  main_controller.c  
+ tcc -o all       -lcomdlg32  -m32 -b  main_controller.c  
+ set updated=1  
+ goto :eof  
+)  
+ call smake main_controller.c ""  
+ IF updated == 1 (
+echo main_controller.c was updated  
+ echo tcc -o all       -lcomdlg32  -m32 -b  main_controller.c  
+ tcc -o all       -lcomdlg32  -m32 -b  main_controller.c  
+ rem updated already = 1 no need to set it again  
+ goto :eof 
+)  
+ IF "" NEQ "" (
+set updated=0  
+ IF "" GTR "" (
+set updated=1  
+ echo main_controller.o was updated   
+ goto :eof 
+)  
+ echo main_controller.o is up to date (not recently updated 
+)  
+ goto :eof 
+) 
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>echo nothing to do for main_controller.o 
+nothing to do for main_controller.o
+
+C:\Users\bigsheun\programs\C\Physics-Excersise>goto :eof 
